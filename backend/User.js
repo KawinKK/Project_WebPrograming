@@ -91,8 +91,8 @@ app.post("/register", async (req, res)=>{
 });
 
 //Login
-app.get("/login", async (req, res)=>{
-  const studentId = parseInt(req.body.studentid);
+app.post("/login", async (req, res)=>{
+  const studentId = parseInt(req.body.studentId);
   const password = req.body.password;
   await client.connect();
   console.log("Connected successfully to server.");
@@ -108,11 +108,11 @@ app.get("/login", async (req, res)=>{
       res.json(findResult);
     } else {
       console.log("Password not correct!");
-      res.sendStatus(403);
+      res.json(findResult);
     }
   } else {
     console.log("Not found user");
-    res.sendStatus(403);
+    res.json(findResult);
   }
   client.close();
 });

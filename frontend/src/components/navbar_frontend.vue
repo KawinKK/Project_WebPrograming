@@ -1,11 +1,11 @@
 <template>
     <div class="navbar bg-blue-600">
-        <RouterLink to="/">
             <div class="flex-1">
-                <a class="btn btn-ghost text-xl text-base-100">Jakka Easy Booking</a>
+                <RouterLink to="/">
+                    <a class="btn btn-ghost text-xl text-base-100">Jakka Easy Booking</a>
+                </RouterLink>
             </div>
-        </RouterLink>
-        <div class="flex-none gap-2">
+        <div class="flex-none gap-2 align-self-center">
             <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-10 rounded-full">

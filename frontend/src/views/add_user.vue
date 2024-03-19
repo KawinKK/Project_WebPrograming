@@ -33,13 +33,17 @@
             <input type="password" class="grow" placeholder="password" v-model="add.password" />
         </label>
     </div>
-    <button class="bg-sky-500 text-base-100 font-bold w-24 h-10 rounded-md hover:bg-sky-600"
+    <button class="bg-sky-500 text-base-100 font-bold w-24 h-10 rounded-md hover:bg-sky-600 mx-2"
         @click="check()">Confirm</button>
+    <RouterLink to="/login">
+        <button class="bg-sky-500 text-base-100 font-bold w-48 h-10 rounded-md hover:bg-sky-600"> Already Register </button>
+    </RouterLink>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import axios from 'axios'
+import router from '@/router';
 
 const add = ref({
     jakkaId: null,
@@ -64,7 +68,7 @@ const insert_user = async () => {
 
 const check = async () => {
     await insert_user()
-    await alert(add.value.name)
+    await router.push('/')
 }
 </script>
 
